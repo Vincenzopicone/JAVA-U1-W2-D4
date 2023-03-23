@@ -16,6 +16,11 @@ public class Product {
         this.price = price;
     }
 
+    public double setPrice (double sconto) {
+        this.price =this.price - (this.price * sconto)/ 100;
+        return this.price;
+    }
+
 
 
 }

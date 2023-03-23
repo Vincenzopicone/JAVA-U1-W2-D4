@@ -44,15 +44,13 @@ public class Order {
         products.stream()
                 .filter(x -> x.category.equals(string))
                 .forEach(x->System.out.println(" Id: " + x.id + " Nome: " + x.name + " Prezzo: " + x.price + "€" + " Catgoria: " + x.category ));
-
     }
 
     public static void applicaSconto (String cat, double sconto) {
         products.stream()
                 .filter(x -> x.category.equals(cat))
-                .map(x->x.price + (x.price * sconto/ 100));
-        products.stream().filter(x -> x.category.equals(cat))
-                .forEach(x->System.out.println(" Id: " + x.id + " Nome: " + x.name + " Prezzo: " + x.price + "€" + " Catgoria: " + x.category ));
+                .map(x->x.price = x.setPrice(sconto))
+                .forEach(x->System.out.println(x));
         /*for (int i = 0; i < products.size(); i++) {
             System.out.println(" Id: " + products.get(i).id + " Nome: " + products.get(i).name + " Prezzo: " + products.get(i).price + "€" + " Catgoria: " + products.get(i).category );
         }*/
